@@ -18,7 +18,7 @@ class LibroController extends Controller
     public function index()
     {
         $libros = Libro::orderBy('id','desc')->get();
-        return view('Libros.index',compact('libros'));
+        return view('libros.index',compact('libros'));
     }
 
     /**
@@ -28,7 +28,7 @@ class LibroController extends Controller
      */
     public function create()
     {
-        return view('Libros.create');
+        return view('libros.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class LibroController extends Controller
      */
     public function show(Libro $libro)
     {
-        return view('Libros.show',compact('libro'));
+        return view('libros.show',compact('libro'));
     }
 
     /**
@@ -69,7 +69,7 @@ class LibroController extends Controller
      */
     public function edit(Libro $libro)
     {
-        return view('Libros.edit',compact('libro'));
+        return view('libros.edit',compact('libro'));
     }
 
     /**
@@ -89,7 +89,7 @@ class LibroController extends Controller
             'sinopsis'=>'required'
         ]);
         $libro->update($request->all());
-        return view('Libros.show',compact('libro'));
+        return view('libros.show',compact('libro'));
     }
 
     /**
